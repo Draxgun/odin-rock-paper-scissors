@@ -11,9 +11,14 @@ function getcomputerChoice(){
 
 /* Player selection case correction */
 function correctCase(word){
-    let part1 = word[0].toUpperCase();
-    let part2 = word.slice(1).toLowerCase();
-    return(part1+part2)
+    try {
+        let part1 = word[0].toUpperCase();
+        let part2 = word.slice(1).toLowerCase();
+        return(part1+part2)
+    } catch (error) {
+        
+    }
+    
 }
 
 /* Player selection letter correction */
@@ -28,6 +33,13 @@ function correctWord(word){
 /* Player selection prompt */
 function getplayerPrompt(){
     let playerAnswer = prompt("Choose Rock,Paper,Scissor : ");
+    console.log(playerAnswer)
+    while(playerAnswer==null){
+        playerAnswer = prompt("Choose Rock,Paper,Scissor : ");
+        if(playerAnswer!=null){
+            break;
+        }
+    } 
     playerAnswer = correctCase(correctWord(playerAnswer));
     return playerAnswer
 }
@@ -115,14 +127,14 @@ function game(){
     if(playerScore>computerScore){
         console.log("You won! Against the machine");
         console.log("The final score is: ");
-        console.log("Player " + playerScore);
-        console.log("Computer " + computerScore);    
+        console.log("Player: " + playerScore);
+        console.log("Computer: " + computerScore);    
 
     } else if (playerScore<computerScore){
         console.log("You Lost! Against the machine");
         console.log("The final score is: ");
-        console.log("Player " + playerScore);
-        console.log("Computer " + computerScore);   
+        console.log("Player: " + playerScore);
+        console.log("Computer: " + computerScore);   
     }  else if (playerScore==computerScore){
         console.log("It is a tie!");
         console.log("The final score is: ");
