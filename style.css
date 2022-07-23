@@ -8,8 +8,11 @@ body{
    font-family: 'Courier New', Courier, monospace;
    display: flex;
    flex-direction: column;
+   
 }
 
+
+/* Header */
 .header{
     background-color: #495057;
     display: flex;
