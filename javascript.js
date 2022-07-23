@@ -144,5 +144,5 @@ function game(){
 }
 
 /* Game declaration */
-game()
+/* game() */
 

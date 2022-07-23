@@ -1,0 +1,27 @@
+body{
+    background-color: #ced4da;
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer{
+   font-family: 'Courier New', Courier, monospace;
+   display: flex;
+   flex-direction: column;
+}
+
+.header{
+    background-color: #495057;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: inherit;
+
+
+}
+.header #text{
+    font-size: 80px;
+    color: #ced4da;
+    padding: 10px;
+    font-weight: bold;
+}
