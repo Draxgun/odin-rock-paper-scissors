@@ -67,3 +67,18 @@ body{
     padding: 10px;
     border-radius: 10px;
 }
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: inherit;
+    background-color: #495057;
+    margin-bottom: 0px; 
+}
+
+#footerText {
+    font-size: 40px;
+    color: #ced4da;
+    padding: 30px;
+}
