@@ -150,38 +150,23 @@ function game(){
 /* Event listener */
 
 
-let mainContainer = document.querySelector(".mainContainer")
-
 function delElement(){
     console.log("Hola")
-    let header = document.getElementById("prueba")
+    let header = document.getElementById("mainContent")
     let deletedElement = header.parentNode.removeChild(header);
     return deletedElement;
 };
 
-
-function restoreElement(){
-    console.log("Adios");
+/*Function to restore deleted Element */
+function restoreElement(deletedElement){
     mainContainer.appendChild(deletedElement)
 }
 
 
-const test = document.querySelector("#test");
-const test2 = document.querySelector("#test2")
+const test = document.querySelector("#startButton");
 
-
-/* p creation */
-const para2 = document.createElement('p');
-para2.classList.add('para2');
-para2.textContent ="Me too!";
-mainContainer.appendChild(para2);
-
-let testVar = mainContainer.removeChild(para2);
 
 
 
 test.addEventListener("click", () => deletedElement = delElement()
-);
-
-test2.addEventListener("click", () => restoreElement()
 );

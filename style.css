@@ -5,20 +5,23 @@ body{
 }
 
 .mainContainer{
-   font-family: 'Courier New', Courier, monospace;
+   font-family: 'VT323', monospace;
    display: flex;
    flex-direction: column;
-   
 }
 
 
 /* Header */
-.header{
-    background-color: #495057;
+.headerContainer{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: inherit;
+    background-color: #495057;
+}
+
+.header{
+    margin:0px 100px;
 
 
 }
@@ -26,5 +29,41 @@ body{
     font-size: 80px;
     color: #ced4da;
     padding: 10px;
-    font-weight: bold;
+    margin: 20px;
+}
+
+
+/* Intro */
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: inherit;
+}
+
+
+#intro{
+    font-size: 40px;
+}
+
+.robot{
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#robotImage{
+    background:transparent;
+    height: 500px;
+    width: 1000px;
+    object-fit: cover;
+}
+
+#startButton{
+    font-family:'VT323', monospace;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 10px;
 }
