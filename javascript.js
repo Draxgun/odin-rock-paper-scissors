@@ -147,26 +147,98 @@ function game(){
 /* game() */
 
 
-/* Event listener */
 
 
-function delElement(){
-    console.log("Hola")
-    let header = document.getElementById("mainContent")
-    let deletedElement = header.parentNode.removeChild(header);
+/* Deletes element */
+function delElement(child){
+    console.log("Hola");
+    let element = document.getElementById(child);
+    console.log("Adios")
+    let deletedElement = element.parentNode.removeChild(element);
     return deletedElement;
 };
 
+
 /*Function to restore deleted Element */
 function restoreElement(deletedElement){
-    mainContainer.appendChild(deletedElement)
+    mainContainer.insertBefore(deletedElement,footer)
+}
+
+/* Elements of the DOM */
+const mainContainer = document.querySelector(".mainContainer");
+const footer = document.querySelector(".footer");
+const start  = document.querySelector("#startButton");
+
+/*RPS gameContent*/
+const gameContent = document.createElement('div');
+gameContent.setAttribute("id","gameContent")
+gameContent.classList.add('gameContent');
+
+/*menu*/
+const menu = document.createElement('div');
+menu.classList.add("menu");
+gameContent.appendChild(menu);
+
+/* menuButton */
+const menuButton = document.createElement('img');
+menuButton.classList.add("imageMenu")
+menuButton.src = "./images/home.png";
+menu.appendChild(menuButton);
+
+/*menuReset */
+const menuReset = document.createElement('div');
+menuReset.classList.add("menuReset");
+menuReset.textContent = "Reset";
+menu.appendChild(menuReset);
+
+
+/*RPS HUD BAR */
+const statsHUD = document.createElement('div');
+statsHUD.classList.add("statsHUD");
+gameContent.appendChild(statsHUD);
+
+
+/* Round */
+const roundHUD = document.createElement('div');
+roundHUD.classList.add("roundHUD");
+roundHUD.textContent = "Round 0";
+statsHUD.appendChild(roundHUD);
+
+
+/* Score */
+const scoreHUD = document.createElement('div');
+scoreHUD.classList.add("scoreHUD");
+scoreHUD.textContent = "Human: 0  CPU: 0";
+statsHUD.appendChild(scoreHUD);
+
+/* Choices */
+const choiceHUD = document.createElement('div');
+choiceHUD.classList.add("choiceHUD");
+choiceHUD.textContent ="Prueba";
+gameContent.appendChild(choiceHUD);
+
+
+
+menuButton.addEventListener ("click", () => {
+    delElement("gameContent");
+    restoreElement(deletedElement);
+
+}); 
+
+
+
+let addGame = () =>{
+    mainContainer.insertBefore(gameContent,footer);
 }
 
 
-const test = document.querySelector("#startButton");
 
 
 
-
-test.addEventListener("click", () => deletedElement = delElement()
+start.addEventListener("click", () => {
+    deletedElement = delElement("mainContent");
+    addGame();    
+}
 );
+
+
