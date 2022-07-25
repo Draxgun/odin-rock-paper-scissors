@@ -214,8 +214,39 @@ statsHUD.appendChild(scoreHUD);
 /* Choices */
 const choiceHUD = document.createElement('div');
 choiceHUD.classList.add("choiceHUD");
-choiceHUD.textContent ="Prueba";
 gameContent.appendChild(choiceHUD);
+
+/*choice*/
+
+const rock = document.createElement('div');
+rock.classList.add("choiceItem");
+choiceHUD.appendChild(rock);
+
+
+
+/*Rock*/
+const rockImage = document.createElement('img');
+rockImage.classList.add("imageChoice")
+rockImage.src = "./images/home.png";
+rock.appendChild(rockImage);
+
+const rockText = document.createElement('div');
+rockText.classList.add("rockText");
+rockText.textContent = "ROCK!";
+rock.appendChild(rockText)
+
+
+/*Paper*/
+const paper = document.createElement('img');
+paper.classList.add("imageChoice")
+paper.src = "./images/paper.png";
+choiceHUD.appendChild(paper);
+
+/*Scissor*/
+const scissor = document.createElement('img');
+scissor.classList.add("imageChoice")
+scissor.src = "./images/home.png";
+choiceHUD.appendChild(scissor);
 
 
 
