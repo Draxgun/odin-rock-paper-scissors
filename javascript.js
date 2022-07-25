@@ -343,24 +343,43 @@ scissor.addEventListener("click",() => {
 
 /* Function that plays game */
 let playGame = (playerChoice)=>{
-    let computerChoice = getcomputerChoice();
-    console.log(playerChoice);
-    console.log(computerChoice);
-    let gameResult = playRound(playerChoice,computerChoice);
-    let gameStatus = gameResult[0];
-    let gameText   = gameResult[1];
-    robotText.textContent = `My choice is ${computerChoice}!`;
-    winnerText.textContent = gameText;
-    round++;
-    if (gameStatus==0){
-        playerScore = playerScore;
-        cpuScore = cpuScore;
-    } else if (gameStatus==1) {
-        playerScore++ ;
-    } else if (gameStatus==-1) {
-        cpuScore++ ;
+    if (round >= 5){
+        let finalplayerScore = playerScore;
+        let finalcpuScore = cpuScore;
+        resetScore();
+        updateScore();
+
+        if(finalplayerScore>cpuScore){
+            winnerText.textContent = "You won! Against the machine";    
+        } else if (finalplayerScore<finalcpuScore){
+            winnerText.textContent = "You Lost! Against the machine";
+        }  else if (finalplayerScore==finalcpuScore){
+            winnerText.textContent = "It is a tie!";
+        }
+        
+    } else {
+        let computerChoice = getcomputerChoice();
+        console.log(playerChoice);
+        console.log(computerChoice);
+        let gameResult = playRound(playerChoice,computerChoice);
+        let gameStatus = gameResult[0];
+        let gameText   = gameResult[1];
+        robotText.textContent = `My choice is ${computerChoice}!`;
+        winnerText.textContent = gameText;
+        round++;
+        if (gameStatus==0){
+            playerScore = playerScore;
+            cpuScore = cpuScore;
+        } else if (gameStatus==1) {
+            playerScore++ ;
+        } else if (gameStatus==-1) {
+            cpuScore++ ;
+        }
+        updateScore();
     }
-    updateScore();
+
+
+
     
 };
 
